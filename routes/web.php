@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/fghfg', function () {
+    return view('cbf');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
