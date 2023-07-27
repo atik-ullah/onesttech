@@ -159,6 +159,8 @@
     CKEDITOR.replace('long_description');
 </script>
 
+@include('dashboard.includes.js')
+
 </body>
 
 
