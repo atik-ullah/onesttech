@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/fghfg', function () {
-    return view('cbf');
-});
 
-Route::get('/dashboard', function () {
+
+Route::get('/development', function () {
     return view('dashboard');
 });
