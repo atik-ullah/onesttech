@@ -15,8 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('staff_id');
             $table->foreignId('role_id')->constrained();
-            $table->foreignId('designation_id')->constrained();
-            $table->foreignId('department_id')->constrained();
+
+            $table->string('designation_id');
+            $table->string('department_id');
+
+            // $table->foreignId('designation_id')->constrained();
+            // $table->foreignId('department_id')->constrained();
+
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('father_name')->nullable();
