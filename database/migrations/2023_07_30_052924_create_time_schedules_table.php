@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('student_documents', function (Blueprint $table) {
+        Schema::create('time_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('student_id')->constrained(); 
-            $table->string('designation')->default('student'); 
-            $table->string('document');
+            $table->string('type');
+            $table->tinyInteger('status')->default(0);
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('student_documents');
+        Schema::dropIfExists('time_schedules');
     }
 };
