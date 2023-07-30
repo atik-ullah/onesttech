@@ -171,7 +171,10 @@
                         <span>Staff Manage</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Manage Enroll</a></li>
+                        <li><a href="#">Roles</a></li>
+                        <li><a href="#">Staff</a></li>
+                        <li><a href="#">Department</a></li>
+                        <li><a href="#">Designation</a></li>
                     </ul>
                 </li>
 
