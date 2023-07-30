@@ -28,7 +28,7 @@
                         <span>Student Info</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Students</a></li>
+                        <li><a href="{{route('index')}}">Students</a></li>
                         <li><a href="#">Student Category</a></li>
                         <li><a href="#">Promote Students</a></li>
                         <li><a href="#">Disabled Students</a></li>

@@ -24,10 +24,11 @@ return new class extends Migration
             $table->foreignId('shift_id')->constrained();    
             $table->date('b_date');
             $table->text('religion');
-            $table->enum('gender', ['M','F','O']);
-            $table->foreignId('category_id')->constrained();    
+            $table->string('gender');
+            $table->string('category_id');    
             $table->string('blood');
             $table->date('admission_date');
+            $table->string('image');
             $table->text('parent');
             $table->string('status')->default(1);
             $table->timestamps();
