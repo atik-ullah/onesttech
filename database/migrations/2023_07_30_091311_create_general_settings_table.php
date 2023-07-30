@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('dark_logo');
             $table->string('favicon');
             $table->foreignId('lang_id');
+            $table->string('session');
+            $table->string('address');
             $table->string('phone');
             $table->string('email');
-            $table->string('about_school');
+            $table->longText('about_school');
             $table->timestamps();
         });
     }
