@@ -11,19 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('general_settings', function (Blueprint $table) {
+        Schema::create('department_contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('app_name');
-            $table->string('footer_text');
-            $table->string('light_logo');
-            $table->string('dark_logo');
-            $table->string('favicon');
-            $table->foreignId('lang_id');
-            $table->string('session');
-            $table->string('address');
+            $table->string('name');
             $table->string('phone');
             $table->string('email');
-            $table->longText('about_school');
+            $table->string('image');
+            $table->tinyInteger('status')->default(0)->comment('0=>inactive, 1=>active');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('general_settings');
+        Schema::dropIfExists('department_contacts');
     }
 };
