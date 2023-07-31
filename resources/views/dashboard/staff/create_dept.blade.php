@@ -28,9 +28,7 @@ Create Department
 
     <!-- Page Content -->
     <form action="#" method="POST" class="row" id="create_dept_form">
-
         @csrf
-
         <div class="col-12 col-md-6">
             <div class="mb-3">
                 <label for="dept_name" class="form-label">Name</label>
@@ -57,12 +55,30 @@ Create Department
 
 
 <!-- Department AJAX -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script>
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+    $(document).ready(function() {
+
+        // Add Data to DB
+        $('#create_dept_form').submit(function() {
+            $.ajax({
+                url: "{{ route('createDept') }}",
+                type: "POST",
+                dataType: "json",
+
+                data : $('#create_dept_form').serialize(),
+                success : function(data) {
+                    console.log(data);
+                }
+            })
+        });
+
+
+
+
+
+
+    });
 </script>
 <!-- End Department AJAX -->
 @endsection
-
-
