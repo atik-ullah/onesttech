@@ -37,9 +37,9 @@ class DepartmentController extends Controller
         $data->save();
 
         if($data) {
-            
+            return response()->json(['data' => $data]);
         }
 
-        return response()->json(['data' => $data]);
+        
     }
 }

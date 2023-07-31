@@ -20,7 +20,7 @@
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
 <!-- Datatable init js -->
-<script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script>
+<!-- <script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script> -->
 
 
 
