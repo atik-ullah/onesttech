@@ -27,7 +27,7 @@ Create Department
     <!-- End Page Heading & Breadcrumb -->
 
     <!-- Page Content -->
-    <form action="" method="POST" class="row">
+    <form action="#" method="POST" class="row" id="create_dept_form">
 
         @csrf
 
@@ -54,4 +54,14 @@ Create Department
 
 
 </div>
+
+<!-- Department AJAX -->
+<script>
+    $(document).ready(function() {
+        $('#create_dept_form').submit(function() {
+            console.log('clicked');
+        });
+    });
+</script>
+<!-- End Department AJAX -->
 @endsection

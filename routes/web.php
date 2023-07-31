@@ -24,6 +24,13 @@ Route::post('/store/student',[StudentController::class, 'store'])->name('student
 
 
 
+
+
+
+
+
+
+
 //-----    Staff Manager Routes    ----->
 
 Route::get('/department', [DepartmentController::class, 'showDept'])->name('showDept');
