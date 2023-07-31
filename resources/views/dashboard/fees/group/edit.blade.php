@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 
 @section('title')
-    Create Group
+    edit Group
 @endsection
 
 @section('body')

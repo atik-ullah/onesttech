@@ -12,6 +12,7 @@
                 <form action="#" method="POST" id="student_insert">
 
                     @csrf
+
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <label>Admission NO</label>
@@ -180,27 +181,50 @@
         </div>
     </div>
 
-    {{-- <script>
+    <script>
         $(document).ready(function() {
 
             $('#student_insert').submit(function(e) {
                 e.preventDefault();
 
-                x = new FormData(document.getElementById("student_insert"));
-                $.ajax({
-                    url: "{{ route('store') }}",
-                    method: "POST",
-                    data: x,
-                    processData: false,
-                    contentType: false,
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.success == true) {
-                            window.location.href = "http://127.0.0.1:8000/index/student";
-                        }
-                    }
-                });
+                console.log('hi');
+
+                // x = new FormData(document.getElementById("student_insert"));
+                // $.ajax({
+                //     url: "{{ route('store') }}",
+                //     method: "POST",
+                //     data: x,
+                //     processData: false,
+                //     contentType: false,
+                //     dataType: "json",
+                //     success: function(response) {
+                //         if (response.success == true) {
+                //             window.location.href = "http://127.0.0.1:8000/index/student";
+                //         }
+                //     }
+                // });
             });
         });
-    </script> --}}
+    </script>
+
+{{-- <script>
+    $(document).on('change', '#categoryName', function() {
+        var categoryId = $(this).val();
+        $.ajax({
+            url: "/get-sub-category-by-category-id/" + categoryId,
+            method: "GET",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                var option = '';
+                option += '<option selected disabled>Select a sub category</option>';
+                $.each(data, function(key, value) {
+                    option += '<option value="' + value.id + '">' + value
+                        .sub_category_name + '</option>';
+                });
+                $('#subCategoryName').empty().append(option);
+            },
+        })
+    })
+</script> --}}
 @endsection
