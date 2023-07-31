@@ -54,11 +54,10 @@ Create Department
 
 
 </div>
-<<<<<<< HEAD
-=======
+
 
 @endsection
->>>>>>> main
+
 <!-- Department AJAX -->
 <script>
 $( document ).ready(function() {
@@ -67,7 +66,3 @@ $( document ).ready(function() {
 </script>
 <!-- End Department AJAX -->
 
-<<<<<<< HEAD
-@endsection
-=======
->>>>>>> main
