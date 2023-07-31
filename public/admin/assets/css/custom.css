@@ -1,0 +1,36 @@
+.page_hading_bredcrumb {
+    padding-left: 14px;
+}
+.page_hading_bredcrumb {
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.page_hading_bredcrumb,
+.breadcrumb_bg li,
+.page_hading_bredcrumb h2 {
+
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+}
+
+.breadcrumb_bg {
+    background: transparent !important;
+    padding-left: 0px !important;
+    font-size: 20px;
+}
+
+.page_hading_bredcrumb h2 {
+    margin-bottom: -10px ;
+}
+
+.breadcrumb_bg li {
+    font-size: 18px !important;
+}
+
+/* Select2 CSS
+------------------------------ */
+.select2_states {
+    width: 100%;
+    min-height: 35px !important;
+}

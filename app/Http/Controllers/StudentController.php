@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
+use App\Models\Classes;
+use App\Models\Section;
+use App\Models\Shift;
+use App\Models\Guardian;
 
 class StudentController extends Controller
 {
@@ -19,7 +24,13 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('dashboard.students.create');
+        return view('dashboard.students.create',
+        [
+            'classes'  => Classes::all(),
+            'shifts' => Shift::all(),
+            'guardians' => Guardian::all(),
+            'sections' => Section::all(),
+        ]);
     }
 
     /**
@@ -27,7 +38,11 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Student::create($request->all());
+
+        dd($request->all());
+       
+   
     }
 
     /**

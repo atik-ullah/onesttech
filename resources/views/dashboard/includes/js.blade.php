@@ -1,3 +1,6 @@
+{{-- custom js --}}
+
+<script src="{{asset('/')}}admin/assets/js/min.js"></script>
 
 
 
@@ -9,13 +12,16 @@
 <script src="{{asset('/')}}admin/assets/libs/simplebar/simplebar.min.js"></script>
 <script src="{{asset('/')}}admin/assets/libs/node-waves/waves.min.js"></script>
 
-<!-- apexcharts -->
-<script src="{{asset('/')}}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
+
 
 <script src="{{asset('/')}}admin/assets/js/pages/dashboard.init.js"></script>
 
+<!-- Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
+
 <!-- Required datatable js -->
 <script src="{{asset('/')}}admin/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('/')}}admin/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -40,6 +46,10 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<!-- Custom js -->
+<script src="{{asset('/')}}admin/assets/js/custom.js"></script>
 
 @if(Session::has('success'))
     <script>
