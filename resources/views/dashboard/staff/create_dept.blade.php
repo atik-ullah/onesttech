@@ -29,34 +29,29 @@ Create Department
     <!-- Page Content -->
     <form action="" method="POST" class="row">
 
-            @csrf
+        @csrf
 
-            <div class="col-12 col-md-6">
-                <div class="mb-3">
-                    <label for="dept_name" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="dept_name" id="dept_name">
-                </div>
+        <div class="col-12 col-md-6">
+            <div class="mb-3">
+                <label for="dept_name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="dept_name" id="dept_name">
             </div>
+        </div>
 
-            <div class="col-12 col-md-6">
-                <div class="mb-3">
-                    <p>Status</p>
-                    <select class="select2_states" name="status">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
-                    </select>
-                </div>
+        <div class="col-12 col-md-6">
+            <div class="mb-3">
+                <p>Status</p>
+                <select class="select2_states" name="status">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                </select>
             </div>
+        </div>
 
-            <button class="btn btn-primary float-end">Submit</button>
-        </form>
-
-
-</form>
+        <button class="btn btn-primary float-end">Submit</button>
+    </form>
     <!-- End Page Content -->
 
 
 </div>
-
-
 @endsection
