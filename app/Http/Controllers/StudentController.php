@@ -41,6 +41,10 @@ class StudentController extends Controller
         // Student::create($request->all());
 
         dd($request->all());
+
+        // Student::create($request->all());
+        // return json_encode(array(
+        //     "statusCode"=>200));
        
    
     }
