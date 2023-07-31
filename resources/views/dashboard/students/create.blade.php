@@ -10,6 +10,8 @@
         <div class="row">
             <div class="col-md-11 mt-5 bg-white mx-5 py-3">
                 <form action="#" method="POST" id="student_insert">
+
+                    @csrf
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <label>Admission NO</label>
@@ -35,17 +37,32 @@
                             <label>Email</label>
                             <input type="email" class="form-control" name="email" id="email">
                         </div>
+
+                        {{-- class --}}
                         <div class="col-md-3 mb-3">
                             <label>Class</label>
                             <select name="class_id" class="form-control" id="class_id">
-                                <option value="">--Select--</option>
+                                <option value="" checked>--Select--</option>
+
+                                @foreach ($classes as $class)
+                                    <option value="{{ $class->id }}">
+                                        {{ $class->name }}
+                                    </option>
+                                @endforeach
 
                             </select>
                         </div>
+
+                        {{-- Section --}}
                         <div class="col-md-3 mb-3">
                             <label>Section</label>
                             <select name="section_id" class="form-control" id="section_id">
-                                <option value="">--Select--</option>
+                            <option value="">--Select--</option>
+                                @foreach ($sections as $section)
+                                    <option value="{{ $class->id === $section->id }}">
+                                        {{ $section->name }}
+                                    </option>
+                                @endforeach
 
                             </select>
                         </div>
@@ -53,6 +70,11 @@
                             <label>Shift</label>
                             <select name="shift_id" class="form-control" id="shift_id">
                                 <option value="">--Select--</option>
+                                @foreach ($shifts as $shift)
+                                    <option value="{{ $shift->id }}">
+                                        {{ $shift->name }}
+                                    </option>
+                                @endforeach
 
                             </select>
                         </div>
@@ -114,6 +136,11 @@
                             <label>Select Parent</label>
                             <select name="parent" class="form-control" id="parent">
                                 <option value="">--Select--</option>
+                                @foreach ($guardians as $guardian)
+                                    <option value="{{ $guardian->id }}">
+                                        {{ $guardian->fath_name }}
+                                    </option>
+                                @endforeach
 
                             </select>
                         </div>
@@ -153,7 +180,7 @@
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
 
             $('#student_insert').submit(function(e) {
@@ -161,7 +188,7 @@
 
                 x = new FormData(document.getElementById("student_insert"));
                 $.ajax({
-                    // url: "{{ route('categories.store') }}",
+                    url: "{{ route('store') }}",
                     method: "POST",
                     data: x,
                     processData: false,
@@ -175,5 +202,5 @@
                 });
             });
         });
-    </script>
+    </script> --}}
 @endsection
