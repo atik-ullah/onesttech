@@ -14,6 +14,7 @@ Route::get('/', function () {
 
 Route::get('/create/student',[StudentController::class, 'create'])->name('create');
 Route::get('/index/student',[StudentController::class, 'index'])->name('index');
+<<<<<<< HEAD
 
 
 //-----    Staff Manager Routes    ----->
@@ -26,3 +27,6 @@ Route::post('/department/create', [DepartmentController::class, 'createDept'])->
  
 
 //-----    End Staff Manager Routes    ----->
+=======
+Route::post('/store/student',[StudentController::class, 'store'])->name('student.store');
+>>>>>>> b7074b6429482080c46a8de08022f7efd5189421

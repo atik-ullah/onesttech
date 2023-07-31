@@ -1,3 +1,6 @@
+{{-- custom js --}}
+
+<script src="{{asset('/')}}admin/assets/js/min.js"></script>
 
 
 
