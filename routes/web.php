@@ -42,4 +42,3 @@ Route::post('/store/student',[StudentController::class, 'store'])->name('store')
 
  
 
-//-----    End Staff Manager Routes    ----->
