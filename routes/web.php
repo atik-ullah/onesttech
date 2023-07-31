@@ -34,3 +34,8 @@ Route::post('/store/student',[StudentController::class, 'store'])->name('student
 
 
 
+<<<<<<< HEAD
+=======
+Route::get('/index/student',[StudentController::class, 'index'])->name('index');
+Route::post('/store/student',[StudentController::class, 'store'])->name('store');
+>>>>>>> 27e7b541c8736fedbb579f8ab8e751e21c9afece
