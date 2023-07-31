@@ -1,6 +1,10 @@
 $(document).ready(function() {
-    $('#group_store').submit(function(e){
+    $('#groupStore').submit(function(e){
         e.preventdefault();
         console.log('Hi');
+    });
+
+    $('#test').click(function(){
+        alert('Hi');
     });
   });

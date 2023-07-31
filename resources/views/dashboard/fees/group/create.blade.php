@@ -13,7 +13,7 @@
                 <a href="{{url('/groups/index')}}"><button class="p-3 btn-primary"><strong>See Group</strong></button></a>
             </div>
 
-            <form action="#" method="POST" id="group_store">
+            <form action="#" method="POST" id="groupStore">
                 @csrf
                 <div class="row p-5 bg-white d-flex">
                     <div class="col-md-5">
@@ -37,6 +37,7 @@
                     <div class="col-md-12" >
                         <label for="" ></label>
                         <input type="submit" class="btn btn-primary" value="create">    
+                        <input type="" class="btn btn-primary" id="test" value="create">    
                     </div>
                 </div>
          </form>
