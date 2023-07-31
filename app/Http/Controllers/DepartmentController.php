@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DepartmentController extends Controller
 {
 
-    public $department;
+    public $response = [];
 
     // Show Department Details
     public function showDept()
@@ -25,10 +25,21 @@ class DepartmentController extends Controller
     // Create Department Details
     public function createDept(Request $request)
     {
-        Department::create([
-            'department' => $request->dept_name,
-            'status' => $request->status,
-        ]);
-        return redirect()->back();
+        // $data = Department::create([
+        //     'department' => $request->dept_name,
+        //     'status' => $request->status,
+        // ]);
+
+        $data = new Department();
+        $data->department = $request->dept_name;
+        $data->status = $request->status;
+
+        $data->save();
+
+        if($data) {
+            
+        }
+
+        return response()->json(['data' => $data]);
     }
 }
