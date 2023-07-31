@@ -84,7 +84,7 @@
                             <span>Fees</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="#">Group</a></li>
+                            <li><a href="{{url('/groups/index')}}">Group</a></li>
                             <li><a href="#">Type</a></li>
                             <li><a href="#">Master</a></li>
                             <li><a href="#">Assign</a></li>
