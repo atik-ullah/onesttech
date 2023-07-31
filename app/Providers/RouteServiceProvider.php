@@ -35,6 +35,9 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+
+
 <<<<<<< HEAD
             Route::middleware('web')
                 ->group(base_path('routes/atik.php'));
