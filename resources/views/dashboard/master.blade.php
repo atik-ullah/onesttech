@@ -40,8 +40,6 @@
 
     </div>
 
-
-
     @include('dashboard.includes.js')
 
 </body>
