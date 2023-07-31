@@ -39,46 +39,7 @@
         @include('dashboard.includes.footer')
 
     </div>
-<<<<<<< HEAD
 
-    {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            $('#summernote').summernote();
-        });
-    </script>
-
-
-    <script>
-        $(document).on('change', '#categoryName', function() {
-            var categoryId = $(this).val();
-            $.ajax({
-                url: "/get-sub-category-by-category-id/" + categoryId,
-                method: "GET",
-                dataType: "JSON",
-                success: function(data) {
-                    console.log(data);
-                    var option = '';
-                    option += '<option selected disabled>Select a sub category</option>';
-                    $.each(data, function(key, value) {
-                        option += '<option value="' + value.id + '">' + value
-                            .sub_category_name + '</option>';
-                    });
-                    $('#subCategoryName').empty().append(option);
-                },
-            })
-        })
-    </script> --}}
-
-    {{-- <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('long_description');
-    </script> --}}
-=======
->>>>>>> 6c88b300609f84ce6f609fc2d76b98b4756e3018
 
     @include('dashboard.includes.js')
 

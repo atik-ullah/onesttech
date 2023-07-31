@@ -15,7 +15,7 @@ Route::get('/', function () {
 
 //Hefajt
 
-Route::get('/create/student',[StudentController::class, 'create'])->name('create');
+Route::any('/create/student',[StudentController::class, 'create'])->name('create');
 
 Route::get('/index/student',[StudentController::class, 'index'])->name('index');
 
