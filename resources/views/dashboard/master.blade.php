@@ -40,11 +40,7 @@
 
     </div>
 
-    
-   <!-- Add the following lines in the <head> section of your HTML -->
-
-
-
+   
     {{-- <script>
         $(document).on('change', '#categoryName', function() {
             var categoryId = $(this).val();
@@ -66,10 +62,6 @@
         })
     </script> --}}
 
-    {{-- <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('long_description');
-    </script> --}}
 
     @include('dashboard.includes.js')
 

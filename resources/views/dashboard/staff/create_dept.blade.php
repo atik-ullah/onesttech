@@ -55,7 +55,7 @@ Create Department
 
 </div>
 
-@endsection
+
 <!-- Department AJAX -->
 <script>
 $( document ).ready(function() {
@@ -63,4 +63,6 @@ $( document ).ready(function() {
 });
 </script>
 <!-- End Department AJAX -->
+@endsection
+
 

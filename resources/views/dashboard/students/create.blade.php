@@ -60,7 +60,7 @@
                             <select name="section_id" class="form-control" id="section_id">
                             <option value="">--Select--</option>
                                 @foreach ($sections as $section)
-                                    <option value="{{ $class->id === $section->id }}">
+                                    <option value="{{ $section->id }}">
                                         {{ $section->name }}
                                     </option>
                                 @endforeach
@@ -205,5 +205,30 @@
                 // });
             });
         });
+        
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+     crossorigin="anonymous"></script>
+
+{{-- <script>
+    $(document).on('change', '#categoryName', function() {
+        var categoryId = $(this).val();
+        $.ajax({
+            url: "/get-sub-category-by-category-id/" + categoryId,
+            method: "GET",
+            dataType: "JSON",
+            success: function(data) {
+                console.log(data);
+                var option = '';
+                option += '<option selected disabled>Select a sub category</option>';
+                $.each(data, function(key, value) {
+                    option += '<option value="' + value.id + '">' + value
+                        .sub_category_name + '</option>';
+                });
+                $('#subCategoryName').empty().append(option);
+            },
+        })
+    })
+</script> --}}
 @endsection
