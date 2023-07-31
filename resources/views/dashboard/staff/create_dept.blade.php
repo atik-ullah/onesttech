@@ -54,14 +54,12 @@ Create Department
 
 
 </div>
-
 <!-- Department AJAX -->
 <script>
-    $(document).ready(function() {
-        $('#create_dept_form').submit(function() {
-            console.log('clicked');
-        });
-    });
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
 </script>
 <!-- End Department AJAX -->
+
 @endsection
