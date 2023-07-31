@@ -12,8 +12,7 @@
 <script src="{{asset('/')}}admin/assets/libs/simplebar/simplebar.min.js"></script>
 <script src="{{asset('/')}}admin/assets/libs/node-waves/waves.min.js"></script>
 
-<!-- apexcharts -->
-<script src="{{asset('/')}}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
+
 
 <script src="{{asset('/')}}admin/assets/js/pages/dashboard.init.js"></script>
 

@@ -17,3 +17,35 @@ Route::get('/', function () {
 Route::get('/create/student',[StudentController::class, 'create'])->name('create');
 Route::get('/index/student',[StudentController::class, 'index'])->name('index');
 Route::post('/store/student',[StudentController::class, 'store'])->name('store');
+
+
+
+
+
+
+
+
+//-----    Staff Manager Routes    ----->
+
+Route::get('/department', [DepartmentController::class, 'showDept'])->name('showDept');
+
+Route::get('/department/create', [DepartmentController::class, 'createDeptForm'])->name('createDeptForm');
+
+Route::post('/department/create', [DepartmentController::class, 'createDept'])->name('createDept');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+//-----    End Staff Manager Routes    ----->
