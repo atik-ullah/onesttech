@@ -39,20 +39,13 @@
         @include('dashboard.includes.footer')
 
     </div>
-<<<<<<< HEAD
 
-    {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            $('#summernote').summernote();
-        });
-    </script>
+    
+   <!-- Add the following lines in the <head> section of your HTML -->
 
 
-    <script>
+
+    {{-- <script>
         $(document).on('change', '#categoryName', function() {
             var categoryId = $(this).val();
             $.ajax({
@@ -77,8 +70,6 @@
     <script>
         CKEDITOR.replace('long_description');
     </script> --}}
-=======
->>>>>>> 6c88b300609f84ce6f609fc2d76b98b4756e3018
 
     @include('dashboard.includes.js')
 
