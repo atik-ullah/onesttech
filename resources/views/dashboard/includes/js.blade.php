@@ -18,6 +18,10 @@
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
 <!-- Datatable init js -->
+<<<<<<< HEAD
+=======
+<!-- <script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script> -->
+>>>>>>> 784b1f31feb84850070268ebfb498755d9e31c10
 
 
 

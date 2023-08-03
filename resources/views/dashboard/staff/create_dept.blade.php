@@ -60,7 +60,8 @@ Create Department
     $(document).ready(function() {
 
         // Add Data to DB
-        $('#create_dept_form').submit(function() {
+        $('#create_dept_form').submit(function(e) {
+            e.preventDefault();
             $.ajax({
                 url: "{{ route('createDept') }}",
                 type: "POST",
