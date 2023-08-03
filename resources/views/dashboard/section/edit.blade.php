@@ -1,0 +1,79 @@
+@extends('dashboard.master')
+
+@section('title')
+Edit Section
+@endsection
+
+@section('body')
+    {{-- <div class="container"> --}}
+    <div class="container py-5 ">
+        <div class="row">
+            <div class="col-md-11 mt-5 bg-white mx-5 py-3">
+                <h3>Edit Section</h3>
+                <form action="" method="POST" id="section_update" section_id="{{ $section->id }}">
+
+                    @csrf
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label>Name</label>
+                            <input type="text" class="form-control"
+                             name="name" id="name" value="{{$section->name}}">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label>Class</label>
+                            <select name="class_id" class="form-control" id="class_id">
+                                <option value="{{$section->class_id}}">{{ $section->class->name }}</option>
+                                @foreach ($classes as $class)
+                                    <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 ">
+                            <label>Status</label><br>
+                            <input type="radio" value="1" {{$section->status==1 ? 'checked' : '' }} name="status"> Active <br>
+                            <input type="radio" value="0" {{$section->status==0 ? 'checked' : '' }} name="status"> Inactive
+                        </div>
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary ">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+    
+                $('#section_update').submit(function(e) {
+                    e.preventDefault();
+                    let id = $(this).attr("section_id");
+                    // alert('hi');
+    
+                    $.ajax({
+                        url: "/update/section/" + id,
+                        method: "POST",
+                        data: $(this).serialize(),
+                        dataType: "json",
+                        success: function(response) {
+    
+                            if (response.success == true) {
+                                alert('Update Successfully');
+                                window.location.href =
+                                    '/index/section';
+                            } else {
+                                window.location.href ="/edit/section/" + id;
+                            }
+                        },
+                    });
+                });
+            });
+        </script>
+
+@endsection

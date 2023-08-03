@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shifts', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->string('name');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('shifts');
+        Schema::dropIfExists('classes');
     }
 };

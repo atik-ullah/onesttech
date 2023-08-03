@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Classes;
+use App\Models\Section;
+use App\Models\Guardian;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Student extends Model
 {
@@ -17,5 +21,31 @@ class Student extends Model
         'image','parent','status'
     ];
 
+   
+    public function class()
+    {
+        return $this->belongsTo(Classes::class, 'class_id');
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
+    }
+
+    public function shift()
+    {
+        return $this->belongsTo(Shift::class, 'shift_id');
+    }
+
+
+
+    public function getStatusAttribute($value)
+    {
+        if ($value == 0) {
+            return "Inactive";
+        } else {
+            return "Active";
+        }
+    }
   
 }

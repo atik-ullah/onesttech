@@ -9,7 +9,7 @@
     <div class="container py-5 ">
         <div class="row">
             <div class="col-md-11 mt-5 bg-white mx-5 py-3">
-                <form action="#" method="POST" id="student_insert">
+                <form action="" method="POST" id="student_insert">
 
                     @csrf
 
@@ -17,33 +17,41 @@
                         <div class="col-md-3 mb-3">
                             <label>Admission NO</label>
                             <input type="number" class="form-control" name="admission_no" id="admission_no">
+                            <span id="admission_no_error" class="error"></span>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label>Roll NO</label>
                             <input type="number" class="form-control" name="roll_no" id="roll_no">
+                            <span id="roll_no_error" class="error"></span>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label>First name</label>
                             <input type="text" class="form-control" name="first_name" id="first_name">
+                            <span id="first_name_error" class="error"></span>
                         </div>
+
                         <div class="col-md-3 mb-3">
                             <label>Last name</label>
                             <input type="text" class="form-control" name="last_name" id="last_name">
+                            <span id="last_name_error" class="error"></span>
                         </div>
+
                         <div class="col-md-3 mb-3">
                             <label>Mobile</label>
                             <input type="number" class="form-control" name="mobile" id="mobile">
+                            <span id="mobile_error" class="error"></span>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label>Email</label>
                             <input type="email" class="form-control" name="email" id="email">
+                            <span id="email_error" class="error"></span>
                         </div>
 
                         {{-- class --}}
                         <div class="col-md-3 mb-3">
                             <label>Class</label>
                             <select name="class_id" class="form-control" id="class_id">
-                                <option value="" checked>--Select--</option>
+                                <option checked>--Select--</option>
 
                                 @foreach ($classes as $class)
                                     <option value="{{ $class->id }}">
@@ -58,12 +66,12 @@
                         <div class="col-md-3 mb-3">
                             <label>Section</label>
                             <select name="section_id" class="form-control" id="section_id">
-                            <option value="">--Select--</option>
-                                @foreach ($sections as $section)
+
+                                {{-- @foreach ($sections as $section)
                                     <option value="{{ $section->id }}">
                                         {{ $section->name }}
                                     </option>
-                                @endforeach
+                                @endforeach --}}
 
                             </select>
                         </div>
@@ -82,6 +90,7 @@
                         <div class="col-md-3 mb-3">
                             <label>Date of Birth</label>
                             <input type="date" class="form-control" name="b_date" id="b_date">
+                          
                         </div>
                         <div class="col-md-3 mb-3">
                             <label>Religion</label>
@@ -132,13 +141,14 @@
                         <div class="col-md-3 mb-3">
                             <label>Image( 100x100 px)</label>
                             <input type="file" class="form-control" name="image" id="image">
+                            <span id="image_error" class="error"></span>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label>Select Parent</label>
                             <select name="parent" class="form-control" id="parent">
                                 <option value="">--Select--</option>
                                 @foreach ($guardians as $guardian)
-                                    <option value="{{ $guardian->id }}">
+                                    <option value="{{ $guardian->fath_name }}">
                                         {{ $guardian->fath_name }}
                                     </option>
                                 @endforeach
@@ -181,54 +191,66 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
     <script>
         $(document).ready(function() {
 
             $('#student_insert').submit(function(e) {
                 e.preventDefault();
 
-                console.log('hi');
+                // console.log('hi');
 
-                // x = new FormData(document.getElementById("student_insert"));
-                // $.ajax({
-                //     url: "{{ route('store') }}",
-                //     method: "POST",
-                //     data: x,
-                //     processData: false,
-                //     contentType: false,
-                //     dataType: "json",
-                //     success: function(response) {
-                //         if (response.success == true) {
-                //             window.location.href = "http://127.0.0.1:8000/index/student";
-                //         }
-                //     }
-                // });
+                x = new FormData(document.getElementById("student_insert"));
+                $.ajax({
+                    url: "{{ route('store') }}",
+                    method: "POST",
+                    data: x,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.success == true) {
+                            alert('Add Successfully');
+                            $('#student_insert')[0].reset();
+                        } else {
+                            for (const key in response.errors) {
+                                errorContainer = $('#' + key + '_error');
+                                errorContainer.text(response.errors[key][0]);
+                            }
+                        }
+                    }
+                });
             });
         });
-        
     </script>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
-     crossorigin="anonymous"></script>
 
-{{-- <script>
-    $(document).on('change', '#categoryName', function() {
-        var categoryId = $(this).val();
-        $.ajax({
-            url: "/get-sub-category-by-category-id/" + categoryId,
-            method: "GET",
-            dataType: "JSON",
-            success: function(data) {
-                console.log(data);
-                var option = '';
-                option += '<option selected disabled>Select a sub category</option>';
-                $.each(data, function(key, value) {
-                    option += '<option value="' + value.id + '">' + value
-                        .sub_category_name + '</option>';
-                });
-                $('#subCategoryName').empty().append(option);
-            },
+{{-- class and section --}}
+<script>
+    $(document).ready(function () {
+
+        $(document).on('change', '#class_id', function() {
+            var classId = $(this).val();
+            // console.log(classId);
+            $.ajax({
+                url:"/getSection/"+classId,
+                method: "GET",
+                dataType: "JSON",
+                success: function(data) {
+                
+                    var option = '';
+                    option += '<option selected disabled>Select Section</option>';
+                    
+                    for (const key in data) {
+                        option += "<option value="+ data[key]['id'] +">"+data[key]['name'] + '</option>';
+                    };
+                    $('#section_id').empty().append(option);
+                
+                },
+            })
         })
-    })
-</script> --}}
+       
+    });
+</script>
 @endsection
