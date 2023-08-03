@@ -85,10 +85,10 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="{{url('/groups/index')}}">Group</a></li>
-                            <li><a href="#">Type</a></li>
-                            <li><a href="#">Master</a></li>
-                            <li><a href="#">Assign</a></li>
-                            <li><a href="#">Collect</a></li>
+                            <li><a href="{{url('/types')}}">Type</a></li>
+                            <li><a href="{{url('/masters')}}">Master</a></li>
+                            <li><a href="{{url('/assigns')}}">Assign</a></li>
+                            <li><a href="{{url('/assign/collect')}}">Collect</a></li>
                         </ul>
                     </li>
                 {{-- @endif --}}

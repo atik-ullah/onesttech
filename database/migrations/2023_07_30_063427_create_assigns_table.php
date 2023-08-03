@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('assigns', function (Blueprint $table) {
             $table->id();
-            $table->string('fees_group');           
+            $table->string('group_id');           
             $table->foreignId('class_id')->constrained();    
             $table->foreignId('section_id')->constrained();   
             $table->enum('gender',['M','F','O']);
             $table->foreignId('category_id')->constrained(); 
-            $table->string('fees_type');
-            $table->string('students_list');
+            $table->string('type_id');
+            $table->string('students_id');
             $table->timestamps();
         });
     }
