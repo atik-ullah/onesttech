@@ -17,5 +17,4 @@ class Student extends Model
         'image','parent','status'
     ];
 
-  
 }

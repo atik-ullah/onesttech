@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('masters', function (Blueprint $table) {
             $table->id();
-            $table->string('fees_group');
-            $table->string('fees_type');
+            $table->string('group_id');
+            $table->string('type_id');
             $table->date('due_date');
             $table->string('amount');
-            $table->string('fine_type');
+            $table->string('fine_type')->nullable();
+            $table->string('percentage')->nullable();
+            $table->string('fine_amount')->nullable();
             $table->tinyInteger('status')->default(0)->comment('0=>Inactive, 1=>Active');
-            $table->string('percentage');
-            $table->string('fine_amount');
             $table->timestamps();
         });
     }
