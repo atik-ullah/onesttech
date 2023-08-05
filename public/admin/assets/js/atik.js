@@ -33,8 +33,6 @@ $('document').ready(function () {
 
     // show Group Data
     function showGroupsData() {
-
-
         $.ajax({
             url: url + "/groups/show",
             dataType: "json",

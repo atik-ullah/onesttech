@@ -15,7 +15,13 @@ class StudentController extends Controller
 
     public function index()
     {
-        return view('dashboard.students.index');
+        return view('dashboard.student_info.students.index',
+        [
+            'classes'  => Classes::all(),
+            'shifts' => Shift::all(),
+            'guardians' => Guardian::all(),
+            'sections' => Section::all(),
+        ]);
     }
 
     /**
@@ -23,7 +29,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('dashboard.students.create',
+        return view('dashboard.student_info.students.create',
         [
             'classes'  => Classes::all(),
             'shifts' => Shift::all(),
@@ -45,10 +51,7 @@ class StudentController extends Controller
                 'last_name' => 'required|string|max:11|',
                 'mobile' => 'required|max:3|',
                 'email' => 'required|email',
-                'blood' => 'required',
-                'admission_date' => 'required',
                 'image' => 'required',
-                'status' => 'required',
         ]);
 
 
@@ -128,7 +131,7 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        return view('dashboard.students.edit', [
+        return view('dashboard.student_info.students.edit', [
             "student" => Student::find($id),
             'classes'  => Classes::all(),
             'shifts' => Shift::all(),
@@ -185,12 +188,12 @@ class StudentController extends Controller
 
     public function StudentCategory()
     {
-        return view('dashboard.students.StudentCategory');
+        return view('dashboard.student_info.students.StudentCategory');
     }
 
     public function disable()
     {
-        return view('dashboard.students.disable',[
+        return view('dashboard.student_info.students.disable',[
             'classes'  => Classes::all(),
             'sections' => Section::all(),
         ]);

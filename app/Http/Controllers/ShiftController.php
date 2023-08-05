@@ -12,7 +12,7 @@ class ShiftController extends Controller
      */
     public function shiftIndex()
     {
-        return view('dashboard.shift.index');
+        return view('dashboard.academic.shift.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class ShiftController extends Controller
      */
     public function shiftCreate()
     {
-        return view('dashboard.shift.create');
+        return view('dashboard.academic.shift.create');
     }
 
     /**
@@ -51,7 +51,7 @@ class ShiftController extends Controller
      */
     public function shiftEdit(string $id)
     {
-        return view('dashboard.shift.edit', [
+        return view('dashboard.academic.shift.edit', [
 
             'Shift' => Shift::find($id),
           

@@ -24,7 +24,7 @@
                 <label class="" style="font-size: 30px">Disabled Students</label>
             </div>
             {{-- form --}}
-            <form action="" class="col-md-12" id="searchCollect">
+            <form action="" class="col-md-12" id="search">
                 @csrf
                 <div class="row">
                     {{-- class --}}
@@ -48,12 +48,6 @@
                         <label>Section <sup class="text-danger">*</sup></label>
                         <select name="section_id" class="form-control" id="section_id">
                             <option checked>--Select a section--</option>
-                            @foreach ($sections as $section)
-                                <option value="{{ $section->id }}">
-                                    {{ $section->name }}
-                                </option>
-                            @endforeach
-
                         </select>
                     </div>
                 </div>
@@ -99,9 +93,9 @@
     <script>
         $(document).ready(function() {
 
-            $('#searchCollect').submit(function(e) {
+            $('#search').submit(function(e) {
                 e.preventDefault();
-                $("#DisablestudentData").html();
+
                 $.ajax({
                     url: '/search/student',
                     method: 'POST',

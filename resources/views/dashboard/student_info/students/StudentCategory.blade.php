@@ -57,7 +57,7 @@
     
                 function showStudentData() {
                     $.ajax({
-                        url: "http://localhost/onesttech/public/show/student",
+                        url: "/show/student",
                         dataType: "json",
                         method: "GET",
                         success: function(response) {

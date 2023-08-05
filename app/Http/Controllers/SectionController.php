@@ -13,7 +13,7 @@ class SectionController extends Controller
 
     public function sectionIndex()
     {
-        return view('dashboard.section.index');
+        return view('dashboard.academic.section.index');
     }
 
     /**
@@ -21,7 +21,7 @@ class SectionController extends Controller
      */
     public function sectionCreate()
     {
-        return view('dashboard.section.create',
+        return view('dashboard.academic.section.create',
     [
         'classes'  => Classes::all(),
     ]);
@@ -58,7 +58,7 @@ class SectionController extends Controller
      */
     public function sectionEdit(string $id)
     {
-        return view('dashboard.section.edit', [
+        return view('dashboard.academic.section.edit', [
 
             'section' => Section::find($id),
             'classes'  => Classes::all(),

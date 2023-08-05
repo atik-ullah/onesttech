@@ -18,29 +18,42 @@
                 </div>
 
                 <div class="row  bg-white">
-
-                    <div class="col-md-2 my-3">
-                        <h2>Filtering</h2>
-                    </div>
-                    <div class="col-md-3 my-3">
-                        <select class="form-control">
-                            <option value="0">Select class</option>
-
-
-                        </select>
-                    </div>
-                    <div class="col-md-3 my-3">
-                        <select class="form-control">
-                            <option value="0">Select section</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2 my-3">
-                        <input class="form-control" type="text" placeholder="Enter Keyword">
-                    </div>
-
-                    <div class="col-md-2 my-3 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary ">Submit</button>
-                    </div>
+                    <form action="" method="POST" id="searchCollect">
+                        @csrf
+                        <div class="row p-3 bg-white d-flex">
+                            
+                            <div class="col-md-4 mt-3">
+                                <label for="" class="col-md-12">Class</label>
+                                <select id="classAssign" class="js-example-basic-single col-md-12 form-control" name="class_id">
+                                        <option class="form-control">select Class</option>
+                                        @foreach ($classes as $class)  
+                                            <option class="form-control" value="{{$class->id}}">{{$class->name}}</option>
+                                        @endforeach
+                                    </select>        
+                            </div>
+        
+                            <div class="col-md-4 mt-3" >
+                                <label for="" >Sections</label>
+                                <select class="js-example-basic-single col-md-12 form-control" name="section_id" id="section">             
+                                    <option class="form-control">select Section</option>              
+                                </select>        
+                              
+                            </div>
+                           
+                              
+                                       
+                            <div class="col-md-3 mt-3">
+                                <label for="" class="col-md-12" >Keyword</label>
+                                <input type="text" name="student_name" class="form-control" placeholder="Student_name..">
+                            </div> 
+                            <div class="col-md-1 mt-4">
+                                <label for="" class="col-md-12" ></label>
+                                <input type="submit" class="btn btn-primary" value="Search"> 
+                            </div> 
+                             
+        
+                        </div>
+                    </form>
 
                 </div>
 
@@ -68,6 +81,9 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
+                        <div id="searchResults">
+
+                        </div>
                         <tbody id="studentData">
 
 
@@ -103,13 +119,17 @@
 
                             var td = $("<td>" + [i + 1] + "</td><td>" + x[i].admission_no +
                                 "</td><td>" + x[i].roll_no + "</td><td>" + x[i].first_name + ' ' +
-                                x[i].last_name + "</td><td>" + x[i].class.name + "("+ x[i].section.name +")" + "</td><td>" + x[i]
+                                x[i].last_name + "</td><td>" + x[i].class.name + "(" + x[i].section
+                                .name + ")" + "</td><td>" + x[i]
                                 .parent + "</td><td>" + x[i].b_date + "</td><td>" + x[i].gender +
-                                "</td><td>" + x[i].mobile + "</td><td class='badge rounded-pill bg-primary text-white'>" + x[i].status +
+                                "</td><td>" + x[i].mobile +
+                                "</td><td class='badge rounded-pill bg-primary text-white'>" + x[i]
+                                .status +
                                 "</td><td value=" + x[i].id +
                                 "><button  id='student_edit' student_id=" +
                                 x[i].id +
-                                "><i class='fas fa-edit'></i></button> <button id='student_delete'  student_id=" + x[i].id + "><i class='fas fa-trash'></i></button> </td>");
+                                "><i class='fas fa-edit'></i></button> <button id='student_delete'  student_id=" +
+                                x[i].id + "><i class='fas fa-trash'></i></button> </td>");
 
                             tr.append(td);
                             $("#studentData").append(tr);
@@ -153,7 +173,7 @@
                     },
 
                 })
-                
+
             });
 
         });

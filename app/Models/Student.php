@@ -21,7 +21,6 @@ class Student extends Model
         'image','parent','status'
     ];
 
-<<<<<<< HEAD
    
     public function class()
     {
@@ -49,6 +48,4 @@ class Student extends Model
         }
     }
   
-=======
->>>>>>> 610d78a7b468cfaafc476083759a9dbf94d785f6
 }

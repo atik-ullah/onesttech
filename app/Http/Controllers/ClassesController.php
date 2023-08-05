@@ -11,7 +11,7 @@ class ClassesController extends Controller
 
     public function classIndex()
     {
-        return view('dashboard.class.index');
+        return view('dashboard.academic.class.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class ClassesController extends Controller
      */
     public function classCreate()
     {
-        return view('dashboard.class.create');
+        return view('dashboard.academic.class.create');
     }
 
     /**
@@ -54,7 +54,7 @@ class ClassesController extends Controller
      */
     public function classEdit(string $id)
     {
-        return view('dashboard.class.edit', [
+        return view('dashboard.academic.class.edit', [
 
             'classes' => Classes::find($id),
           

@@ -11,7 +11,7 @@ class GaurdianController extends Controller
 
     public function gardianIndex()
     {
-        return view('dashboard.gaurdians.index');
+        return view('dashboard.student_info.gaurdians.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class GaurdianController extends Controller
      */
     public function gardianCreate()
     {
-        return view('dashboard.gaurdians.create');
+        return view('dashboard.student_info.gaurdians.create');
     }
 
     /**
@@ -81,7 +81,7 @@ class GaurdianController extends Controller
      */
     public function gardianEdit(string $id)
     {
-        return view('dashboard.gaurdians.edit', [
+        return view('dashboard.student_info.gaurdians.edit', [
 
             'guardians' => Guardian::find($id),
           
