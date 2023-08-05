@@ -29,10 +29,10 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('index')}}">Students</a></li>
-                        <li><a href="#">Student Category</a></li>
+                        <li><a href="{{route('StudentCategory')}}">Student Category</a></li>
                         <li><a href="#">Promote Students</a></li>
-                        <li><a href="#">Disabled Students</a></li>
-                        <li><a href="#">Guardian</a></li>
+                        <li><a href="{{route('disable')}}">Disabled Students</a></li>
+                        <li><a href="{{route('gardianIndex')}}">Guardian</a></li>
                     </ul>
                 </li>
 
@@ -42,9 +42,9 @@
                         <span>Academic</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">Class</a></li>
-                        <li><a href="#">Section</a></li>
-                        <li><a href="#">Shift</a></li>
+                        <li><a href="{{route('classIndex')}}">Class</a></li>
+                        <li><a href="{{route('sectionIndex')}}">Section</a></li>
+                        <li><a href="{{route('shiftIndex')}}">Shift</a></li>
                         <li><a href="#">Class Setup</a></li>
                         <li><a href="#">Subject</a></li>
                         <li><a href="#">Subject Assign</a></li>
