@@ -1,9 +1,3 @@
-{{-- custom js --}}
-
-<script src="{{asset('/')}}admin/assets/js/min.js"></script>
-
-
-
 
 <!-- JAVASCRIPT -->
 <script src="{{asset('/')}}admin/assets/libs/jquery/jquery.min.js"></script>
@@ -18,19 +12,8 @@
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
 <!-- Datatable init js -->
-<<<<<<< HEAD
-=======
+
 <!-- <script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script> -->
->>>>>>> 784b1f31feb84850070268ebfb498755d9e31c10
-
-
-
-{{-- custom js by atik --}}
-{{-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> --}}
-
-
-
-
 
 <!-- Custom js -->
 <script src="{{asset('/')}}admin/assets/js/custom.js"></script>
