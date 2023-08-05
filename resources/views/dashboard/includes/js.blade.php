@@ -1,9 +1,3 @@
-{{-- custom js --}}
-
-<script src="{{asset('/')}}admin/assets/js/min.js"></script>
-
-
-
 
 <!-- JAVASCRIPT -->
 <script src="{{asset('/')}}admin/assets/libs/jquery/jquery.min.js"></script>
@@ -20,6 +14,7 @@
 <!-- Datatable init js -->
 
 <!-- <script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script> -->
+<<<<<<< HEAD
 
 
 
@@ -30,6 +25,8 @@
 
 
 
+=======
+>>>>>>> 3f4eed699e827889d724bb0a096d792950c1723f
 
 <!-- Custom js -->
 <script src="{{asset('/')}}admin/assets/js/custom.js"></script>

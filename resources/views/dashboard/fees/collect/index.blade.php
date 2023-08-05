@@ -39,6 +39,7 @@
                         <label for="" class="col-md-12" >Admission No</label>
                         <select class="js-example-basic-single col-md-12 form-control" name="admission_no">
                             
+                            <option class="form-control" value="">enter admission_no</option>
                             @foreach ($students as $student)  
                                 <option class="form-control" value="{{$student->admission_no}}">{{$student->admission_no}}</option>
                             @endforeach

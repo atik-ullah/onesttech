@@ -206,6 +206,9 @@
                     dataType: "json",
                     success: function(response) {
                         if (response.success == true) {
+<<<<<<< HEAD
+                            window.location.href = "http://127.0.0.1:8000/index/student";
+=======
                             alert('Add Successfully');
                             $('#student_insert')[0].reset();
                         } else {
@@ -213,6 +216,7 @@
                                 errorContainer = $('#' + key + '_error');
                                 errorContainer.text(response.errors[key][0]);
                             }
+>>>>>>> 001242bc42015b0ff4b076860929a6d972f95b75
                         }
                     }
                 });

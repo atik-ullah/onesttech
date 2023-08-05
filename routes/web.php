@@ -85,6 +85,7 @@ Route::post('/update/shift/{id}',[ShiftController::class, 'shiftUpdate'])->name(
 Route::get('/destroy/shift/{id}',[ShiftController::class, 'shiftDestroy'])->name('shiftDestroy');
 
 //Atik
+//group
 Route::get('/groups/index',[GroupController::class, 'index'])->name('group.index');
 Route::any('/groups/create',[GroupController::class, 'create']);
 Route::post('/groups/store',[GroupController::class, 'store']);
@@ -93,21 +94,22 @@ Route::get('/groups/edit/{id}',[GroupController::class, 'edit']);
 Route::any('/groups/update/{id}',[GroupController::class, 'update']);
 Route::get('/groups/delete/{id}',[GroupController::class, 'delete']);
 
-
+//type
 Route::resource('/types',TypeController::class);
 Route::any('/type/update/{id}',[TypeController::class, 'restore']);
 Route::any('/type/delete/{id}',[TypeController::class, 'delete']);
 
-
+//master
 Route::resource('/masters',MasterController::class);
 Route::any('/master/update/{id}',[MasterController::class,'update']);
 Route::any('/master/delete/{id}',[MasterController::class,'destroy']);
 
-
+//assign
 Route::resource('/assigns',AssignController::class);
 Route::any('/assign/update/{id}',[AssignController::class,'update']);
 Route::any('/assign/delete/{id}',[AssignController::class,'destroy']);
 Route::get('/get-section-by-classId/{id}',[AssignController::class,'section']); //done
+//collect
 Route::any('/assign/collect',[AssignController::class,'collect']);
 Route::any('/collectSearch',[AssignController::class,'searchCollect']);
 

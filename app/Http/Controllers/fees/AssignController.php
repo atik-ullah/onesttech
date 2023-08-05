@@ -94,19 +94,7 @@ class AssignController extends Controller
     public function collect()
     {
         
-        // $searchQuery = $request->input('searchQuery');
-        // $results = Student::where('class_id', 'LIKE', '%' . $searchQuery . '%')
-        // ->orWhere('section_id', 'LIKE', '%' . $searchQuery . '%')
-        // ->orWhere('admission_no', 'LIKE', '%' . $searchQuery . '%')
-        // ->orWhere('first_name', 'LIKE', '%' . $searchQuery . '%')
-        // ->orWhere('last_name', 'LIKE', '%' . $searchQuery . '%')
-        // ->get();
-        // $results = Student::where('class_id', 'LIKE', '%' . $request->class_id . '%')
-        // ->orWhere('section_id', 'LIKE', '%' . $request->section_id . '%')
-        // ->orWhere('admission_no', 'LIKE', '%' . $request->admission_no . '%')
-        // ->orWhere('first_name', 'LIKE', '%' . $request->first_name. '%')
-        // ->orWhere('last_name', 'LIKE', '%' .$request->last_name . '%')
-        // ->get();
+       
         return view('dashboard.fees.collect.index',[
            'classes' => Classes::all(),
             'sections' => Section::all(),
